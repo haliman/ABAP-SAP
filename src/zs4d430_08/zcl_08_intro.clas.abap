@@ -17,7 +17,7 @@ CLASS zcl_08_intro IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
-    DATA var TYPE /lrn/s4d430_ind.
+    DATA var TYPE /LRN/S4D430_IND.
 
     SELECT FROM /lrn/s4d430_ind
         FIELDS *
