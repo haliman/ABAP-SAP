@@ -1,7 +1,20 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
+//@AbapCatalog.dataMaintenance: #RESTRICTED
+//@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AbapCatalog: {
+    dataMaintenance: #RESTRICTED,
+    viewEnhancementCategory: [#NONE]
+}
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Empleado (entidad)'
 @Metadata.ignorePropagatedAnnotations: true
+@ObjectModel: {  
+    usageType: {  
+        serviceQuality: #D,
+        sizeCategory: #M,
+        dataClass: #MASTER
+    }
+}
+
 define view entity Z08_R_EMPLOYEE
   as select from z08employ
 {
@@ -11,8 +24,10 @@ define view entity Z08_R_EMPLOYEE
       birth_date            as BirthDate,
       entry_date            as EntryDate,
       department_id         as DepartmentId,
-      //    annual_salary as AnnualSalary,
-      //    currency_code as CurrencyCode,
+      @Semantics.amount.currencyCode: 'CurrencyCode'
+      annual_salary as AnnualSalary,
+      @EndUserText.label: 'Currency Key'
+      currency_code as CurrencyCode,
       created_by            as CreatedBy,
       created_at            as CreatedAt,
       local_last_changed_by as LocalLastChangedBy,
