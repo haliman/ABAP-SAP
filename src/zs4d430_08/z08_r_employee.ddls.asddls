@@ -2,7 +2,9 @@
 //@AbapCatalog.viewEnhancementCategory: [#NONE]
 @AbapCatalog: {
     dataMaintenance: #RESTRICTED,
-    viewEnhancementCategory: [#NONE]
+    viewEnhancementCategory: [#PROJECTION_LIST],
+    extensibility.dataSources: [ 'Employee' ],
+    extensibility.elementSuffix: 'ZEM'
 }
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Empleado (entidad)'
@@ -16,7 +18,9 @@
 }
 
 define view entity Z08_R_EMPLOYEE
-  as select from z08employ
+  as select from z08employ as Employee
+  association[1..1] to Z08_R_DEPARTMENT as _Department
+    on $projection.DepartmentId = _Department.Id
 {
   key employee_id           as EmployeeId,
       first_name            as FirstName,
@@ -32,5 +36,6 @@ define view entity Z08_R_EMPLOYEE
       created_at            as CreatedAt,
       local_last_changed_by as LocalLastChangedBy,
       local_last_changed_at as LocalLastChangedAt,
-      last_changed_at       as LastChangedAt
+      last_changed_at       as LastChangedAt,
+      _Department
 }

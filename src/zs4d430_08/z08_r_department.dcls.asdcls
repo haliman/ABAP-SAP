@@ -1,0 +1,13 @@
+@EndUserText.label: 'Departamento (control de acceso)'
+@MappingRole: true
+define role Z08_R_DEPARTMENT {
+    grant select on Z08_R_DEPARTMENT
+    where ( Id ) 
+        = aspect pfcg_auth( 
+//            Z08DPMNT, 
+//            Z08DEPMENT, 
+            /LRN/DPMNT,
+            /LRN/DPMNT,
+            ACTVT = '03');
+                        
+}
