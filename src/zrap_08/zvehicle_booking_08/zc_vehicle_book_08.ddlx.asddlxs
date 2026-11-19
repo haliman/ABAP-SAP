@@ -1,0 +1,204 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'BookingID'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'BookingID'
+annotate view ZC_VEHICLE_BOOK_08 with
+{
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @EndUserText.label: 'BookingID'
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'BookingID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'BookingID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  @UI.hidden: true
+  BookingID;
+  
+  @EndUserText.label: 'CustormerName'
+  @UI.identification: [ {
+    position: 20 , 
+    label: '+'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'CustormerName'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  CustormerName;
+  
+  @EndUserText.label: 'Vehicle'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Vehicle'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Vehicle'
+  } ]
+  @UI.selectionField: [ {
+    position: 30 
+  } ]
+  Vehicle;
+  
+  @EndUserText.label: 'StartDate'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'StartDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'StartDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 40 
+  } ]
+  StartDate;
+  
+  @EndUserText.label: 'EndDate'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'EndDate'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'EndDate'
+  } ]
+  @UI.selectionField: [ {
+    position: 50 
+  } ]
+  EndDate;
+
+  @EndUserText.label: 'Status'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Status',
+    criticality: 'StatusCriticality',
+    criticalityRepresentation: #WITH_ICON
+  },
+  { 
+    type: #FOR_ACTION,
+    dataAction: 'CancelBooking',
+    label: 'Cancelar'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'Status',
+    criticality: 'StatusCriticality',
+    criticalityRepresentation: #WITH_ICON
+  },
+  { 
+    type: #FOR_ACTION,
+    dataAction: 'CancelBooking',
+    label: 'Cancelar'
+  } ]
+  @UI.selectionField: [ {
+    position: 60 
+  } ]
+  Status;
+    
+  @UI.hidden: true
+  StatusCriticality;
+  
+  @EndUserText.label: 'Totaldays'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Totaldays'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'Totaldays'
+  } ]
+  @UI.selectionField: [ {
+    position: 70 
+  } ]
+  Totaldays;
+  
+  @EndUserText.label: 'TotalPrice'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'TotalPrice'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'TotalPrice'
+  } ]
+  @UI.selectionField: [ {
+    position: 80 
+  } ]
+  TotalPrice;
+  
+  @UI.identification: [ {
+    position: 90 
+  } ]
+  @UI.lineItem: [ {
+    position: 90 
+  } ]
+  @UI.selectionField: [ {
+    position: 90 
+  } ]
+  @UI.hidden: true
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  @UI.lineItem: [ {
+    position: 100 
+  } ]
+  @UI.selectionField: [ {
+    position: 100 
+  } ]
+  @UI.hidden: true
+  Createdat;
+  
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  @UI.lineItem: [ {
+    position: 110 
+  } ]
+  @UI.selectionField: [ {
+    position: 110 
+  } ]
+  @UI.hidden: true
+  Lastchangedby;
+  
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  @UI.lineItem: [ {
+    position: 120 
+  } ]
+  @UI.selectionField: [ {
+    position: 120 
+  } ]
+  @UI.hidden: true
+  Lastchangedat;
+  
+  @UI.identification: [ {
+    position: 130 
+  } ]
+  @UI.lineItem: [ {
+    position: 130 
+  } ]
+  @UI.selectionField: [ {
+    position: 130 
+  } ]
+  @UI.hidden: true
+  Locallastchanged;
+}

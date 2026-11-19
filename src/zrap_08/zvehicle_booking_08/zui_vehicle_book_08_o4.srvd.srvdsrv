@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_VEHICLE_BOOK_08'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_VEHICLE_BOOK_08'
+  }
+}
+define service ZUI_VEHICLE_BOOK_08_O4 provider contracts odata_v4_ui {
+  expose ZC_VEHICLE_BOOK_08;
+}

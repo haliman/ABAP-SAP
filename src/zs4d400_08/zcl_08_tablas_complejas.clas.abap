@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_08_tablas_complejas IMPLEMENTATION.
+CLASS ZCL_08_TABLAS_COMPLEJAS IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

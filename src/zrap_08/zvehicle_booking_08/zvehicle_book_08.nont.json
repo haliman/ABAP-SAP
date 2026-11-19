@@ -1,0 +1,11 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZVEHICLE_BOOK_08",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "name": "ZVEHICLE_BOOK_08",
+  "sapObjectType": "ZVEHICLE_BOOK_08",
+  "rootNode": true
+}

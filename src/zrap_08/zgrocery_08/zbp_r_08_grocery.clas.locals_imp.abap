@@ -6,13 +6,45 @@ CLASS LHC_ZR_08_GROCERY DEFINITION INHERITING FROM CL_ABAP_BEHAVIOR_HANDLER.
            REQUEST requested_authorizations FOR Grocery
         RESULT result,
       checkExpirationDate FOR MODIFY
-            keys FOR ACTION Grocery~checkExpirationDate RESULT result.
+            IMPORTING keys FOR ACTION Grocery~checkExpirationDate RESULT result.
 ENDCLASS.
 
 CLASS LHC_ZR_08_GROCERY IMPLEMENTATION.
   METHOD GET_GLOBAL_AUTHORIZATIONS.
   ENDMETHOD.
+
   METHOD checkExpirationDate.
+    DATA: lt_groceries TYPE TABLE FOR READ RESULT zr_08_grocery,
+          ls_grocery TYPE STRUCTURE FOR READ RESULT zr_08_grocery,
+          lv_expiration TYPE d,
+          lv_current_date TYPE d,
+          lv_expired TYPE abap_boolean,
+          lt_update_groceries TYPE TABLE FOR UPDATE zr_08_grocery.
+
+    READ ENTITIES OF zr_08_grocery
+      IN LOCAL MODE ENTITY Grocery
+      ALL FIELDS WITH CORRESPONDING #( keys )
+      RESULT lt_groceries.
+
+    LOOP AT lt_groceries INTO ls_grocery.
+      lv_expiration = ls_grocery-Expirationdate.
+      lv_current_date = cl_abap_context_info=>get_system_date( ).
+      IF lv_expiration < lv_current_date.
+        lv_expired = abap_true.
+      ELSE.
+        lv_expired = abap_false.
+      ENDIF.
+
+    APPEND VALUE #( id = ls_grocery-Id expired = lv_expired )
+      TO lt_update_groceries.
+    MODIFY ENTITIES OF zr_08_grocery IN LOCAL MODE
+      ENTITY Grocery
+      UPDATE FIELDS ( expired )
+      WITH lt_update_groceries.
+    ENDLOOP.
+
+    result = VALUE #( FOR groceries IN lt_groceries
+      ( id = groceries-id %param = groceries ) ).
   ENDMETHOD.
 
 ENDCLASS.

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZVEHICLE_BOOKING_08</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Mensajes Vehicle Booking</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZVEHICLE_BOOKING_08</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Las fechas de inicio y fin son obligatorias.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZVEHICLE_BOOKING_08</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>La reserva ya está cancelada.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZVEHICLE_BOOKING_08</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>La reserva ha sido cancelada correctamente.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZVEHICLE_BOOKING_08</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>No se puede cancelar una reserva cuya fecha de inicio ya ha pasado.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZVEHICLE_BOOKING_08</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>La fecha de la reserva no es válida.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

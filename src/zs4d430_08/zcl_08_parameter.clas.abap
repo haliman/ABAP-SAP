@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_08_parameter IMPLEMENTATION.
+CLASS ZCL_08_PARAMETER IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

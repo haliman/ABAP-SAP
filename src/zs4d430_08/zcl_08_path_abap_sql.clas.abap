@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_08_path_abap_sql IMPLEMENTATION.
+CLASS ZCL_08_PATH_ABAP_SQL IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
@@ -50,5 +50,4 @@ CLASS zcl_08_path_abap_sql IMPLEMENTATION.
         name = 'Seleccion resultado'
     ).
   ENDMETHOD.
-
 ENDCLASS.
