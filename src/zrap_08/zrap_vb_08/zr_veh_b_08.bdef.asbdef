@@ -1,0 +1,74 @@
+managed implementation in class ZBP_R_VEH_B_08 unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_VEH_B_08 alias ZrVehB08
+persistent table ZVEH_B_08
+extensible
+draft table ZVEH_B_08_D
+etag master Locallastchanged
+lock master total etag Lastchangedat
+authorization master( global )
+{
+  field ( readonly )
+   BookingID,
+   TotalDays,
+   Status,
+   Statuscriticality,
+   Createdby,
+   Createdat,
+   Lastchangedby,
+   Lastchangedat,
+   Locallastchanged;
+
+  field ( numbering : managed )
+   BookingID;
+
+
+  create;
+  update;
+  delete;
+
+  determination CalculateTotalDays on modify {
+    field StartDate, EndDate;
+  }
+
+  determination setInitialStatus on modify {
+    create;
+  }
+
+  action CancelBooking result [1] $self;
+
+  validation ValidateDates on save {
+    create;
+    update;
+    field StartDate, EndDate;
+  }
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare {
+    validation ValidateDates;
+  }
+
+  mapping for ZVEH_B_08 corresponding extensible
+  {
+    BookingID = BOOKING_ID;
+    CustormerName = CUSTORMER_NAME;
+    Vehicle = VEHICLE;
+    StartDate = START_DATE;
+    EndDate = END_DATE;
+    Status = STATUS;
+    Totaldays = TOTALDAYS;
+    TotalPrice = TOTAL_PRICE;
+    Currency = CURRENCY;
+    Createdby = CREATEDBY;
+    Createdat = CREATEDAT;
+    Lastchangedby = LASTCHANGEDBY;
+    Lastchangedat = LASTCHANGEDAT;
+    Locallastchanged = LOCALLASTCHANGED;
+  }
+
+}
